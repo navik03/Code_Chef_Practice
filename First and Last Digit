@@ -1,0 +1,63 @@
+First and Last Digit Problem Code: FLOW004SolvedSubmit
+If Give an integer N . Write a program to obtain the sum of the first and last digits of this number.
+
+Input
+The first line contains an integer T, the total number of test cases. Then follow T lines, each line contains an integer N.
+
+Output
+For each test case, display the sum of first and last digits of N in a new line.
+
+Constraints
+1 ≤ T ≤ 1000
+1 ≤ N ≤ 1000000
+Example
+Input
+3 
+1234
+124894
+242323
+
+Output
+5
+5
+5
+
+SOLUTION
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+    public static int getFir(int x){
+        while(x>=10){
+            x = x/10;
+        }
+        return x;
+    }
+    
+    public static int getSum(int x){
+        
+        int sum = 0;
+        
+        int lastDigit = x%10;
+        
+        int firstDigit = getFir(x);
+        
+        sum = lastDigit+firstDigit;
+        return sum;
+    }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		for(int i=0;i<n;i++){
+		    int x = sc.nextInt();
+		    System.out.println(getSum(x));
+		}
+	}
+}
